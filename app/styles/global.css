@@ -1,0 +1,52 @@
+.home-page-title-section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+}
+
+.home-page-title-section img {
+  height: 200px;
+  width: 200px;
+}
+
+.home-page-title-section h1,
+.home-page-title-section img {
+  margin: 0;
+}
+
+.navbar {
+  align-items: center;
+  background-color: black;
+  display: flex;
+  height: 75px;
+  justify-content: space-between;
+  left: 0;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  color: white;
+}
+
+.navbar h1 {
+  font-size: 18px;
+}
+
+.navbar-logo {
+  align-items: center;
+  display: flex;
+}
+
+.navbar-logo {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.navbar-logo img {
+  height: 50px;
+  width: 50px;
+}
