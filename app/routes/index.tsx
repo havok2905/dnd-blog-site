@@ -2,6 +2,8 @@ import {Link} from '@remix-run/react';
 
 import {Navbar} from '~/components/Navbar';
 
+import * as ffxivBurningOfTheGreatwood from "./homebrew/adventures/ffxiv-burning-of-the-greatwood.mdx";
+
 import * as seers from "./homebrew/creatures/seers.mdx";
 
 import * as duineSpirits from "./homebrew/races/duine-spirits.mdx";
@@ -60,6 +62,10 @@ const indexRoute = () => {
         <li>{getPost(sessionZeroShortForm)}</li>
       </ul>
       <h2>D&D Homebrew</h2>
+      <h3>Adventures</h3>
+      <ul>
+        <li>{getPost(ffxivBurningOfTheGreatwood)}</li>
+      </ul>
       <h3>World</h3>
       <ul>
         <li>{getPost(theWorldOfRunoa)}</li>
