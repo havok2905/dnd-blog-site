@@ -8,12 +8,14 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import designSystem from '~/design-system/design-system.css';
+import designSystemReset from '~/design-system/reset.css';
 import global from '~/styles/global.css';
-import vanilla from '~/styles/vanilla.css';
 
 export const links = () => {
   return [
-    { rel: "stylesheet", href: vanilla },
+    { rel: "stylesheet", href: designSystemReset },
+    { rel: "stylesheet", href: designSystem },
     { rel: "stylesheet", href: global }
   ];
 };
@@ -30,6 +32,9 @@ export default function App() {
       <head>
         <Meta />
         <Links />
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet"></link>
       </head>
       <body>
         <Outlet />

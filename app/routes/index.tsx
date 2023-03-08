@@ -1,21 +1,23 @@
-import {Link} from '@remix-run/react';
+import {Navbar} from '~/design-system/components/Navbar';
 
-import {Navbar} from '~/components/Navbar';
+import {Button} from '~/design-system/components/Button';
+import {Card} from '~/design-system/components/Card';
+import {Page} from '~/design-system/components/Page';
 
 import * as ffxivBurningOfTheGreatwood from "./homebrew/adventures/ffxiv-burning-of-the-greatwood.mdx";
 
-import * as seers from "./homebrew/creatures/seers.mdx";
+import {meta as seers} from "./homebrew/creatures/seers";
 
-import * as duineSpirits from "./homebrew/races/duine-spirits.mdx";
-import * as dwarves from "./homebrew/races/dwarves.mdx";
-import * as halflings from "./homebrew/races/halflings.mdx";
-import * as serpentes from "./homebrew/races/serpentes.mdx";
-import * as theVidi from "./homebrew/races/the-vidi.mdx";
+import {meta as duineSpirits} from "./homebrew/races/duine-spirits";
+import {meta as dwarves} from "./homebrew/races/dwarves";
+import {meta as halflings} from "./homebrew/races/halflings";
+import {meta as serpentes} from "./homebrew/races/serpentes";
+import {meta as theVidi} from "./homebrew/races/the-vidi";
 
-import * as theWorldOfRunoa from './homebrew/world/the-world-of-runoa.mdx';
+import {meta as theWorldOfRunoa} from './homebrew/world/the-world-of-runoa';
 
-import * as sessionZeroLongForm from './resources/session-zero-long-form.mdx';
-import * as sessionZeroShortForm from './resources/session-zero-short-form.mdx';
+import {meta as sessionZeroLongForm} from './resources/session-zero-long-form';
+import {meta as sessionZeroShortForm} from './resources/session-zero-short-form';
 
 import logo from '~/images/logo.png';
 
@@ -38,53 +40,48 @@ const indexRoute = () => {
     } = post?.attributes?.meta;
 
     return (
-      <div>
-        <Link to={path}>
-          {title}
-        </Link>
+      <Card title={title}>
         <p>
           {description}
         </p>
-      </div>
+        <Button
+          isAnchor
+          path={path}
+          text="View" />
+      </Card>
     );
   };
 
   return (
     <>
       <Navbar/>
-      <div className="home-page-title-section">
-        <img alt="logo" src={logo}/>
-        <h1>Havok's Corner</h1>
-      </div>
-      <h2>Resources</h2>
-      <ul>
-        <li>{getPost(sessionZeroLongForm)}</li>
-        <li>{getPost(sessionZeroShortForm)}</li>
-      </ul>
-      <h2>D&D Homebrew</h2>
-      <h3>Adventures</h3>
-      <ul>
-        <li>{getPost(ffxivBurningOfTheGreatwood)}</li>
-      </ul>
-      <h3>World</h3>
-      <ul>
-        <li>{getPost(theWorldOfRunoa)}</li>
-      </ul>
-      <h3>Races</h3>
-      <ul>
-        <li>{getPost(duineSpirits)}</li>
-        <li>{getPost(dwarves)}</li>
-        <li>{getPost(halflings)}</li>
-        <li>{getPost(theVidi)}</li>
-        <li>{getPost(serpentes)}</li>
-      </ul>
-      <blockquote>
-        !!!SPOILER TERRITORY AHEAD!!!
-      </blockquote>
-      <h3>Creatures</h3>
-      <ul>
-        <li>{getPost(seers)}</li>
-      </ul>
+      <Page>
+        <div className="home-page-title-section">
+          <img alt="logo" src={logo}/>
+          <h1>Havok's Corner</h1>
+        </div>
+        <h2>Resources</h2>
+        {getPost(sessionZeroLongForm)}
+        {getPost(sessionZeroShortForm)}
+        <h2>D&D Homebrew</h2>
+        <h3>Adventures</h3>
+        {getPost(ffxivBurningOfTheGreatwood)}
+        <h3>World</h3>
+        {getPost(theWorldOfRunoa)}
+        <h3>Races</h3>
+        {getPost(duineSpirits)}
+        {getPost(dwarves)}
+        {getPost(halflings)}
+        {getPost(theVidi)}
+        {getPost(serpentes)}
+        <Card>
+          <p>
+            !!!SPOILER TERRITORY AHEAD!!!
+          </p>
+        </Card>
+        <h3>Creatures</h3>
+        {getPost(seers)}
+      </Page>
     </>
   );
 };
