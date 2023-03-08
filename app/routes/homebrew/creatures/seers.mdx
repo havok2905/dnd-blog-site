@@ -6,6 +6,7 @@ meta:
 ---
 
 import {Navbar} from '~/components/Navbar';
+import {NpcBlock} from '~/components/NpcBlock';
 
 import coverImage from '~/images/seers-cover-image.png';
 import seerToken from '~/images/seers-seer-token.png';
@@ -73,238 +74,313 @@ Forging an extraordinary connection with The Six has the potential to grant a ma
 
 ## Stat Blocks
 
-<img alt="Seer Token" src={seerToken} />
+<NpcBlock
+  name="Seer"
+  tokenAlt="Seer Token"
+  tokenSrc={seerToken}
+  cr={'20'}
+  ac={20}
+  hp={370}
+  proficiencyBonus={6}
+  speed={[
+    {
+      feet: 30,
+      name: ''
+    }
+  ]}
+  size="Gargantuan"
+  type="Celestial"
+  alignment="Chaotic Neutral"
 
-### Seer
+  str={10}
+  dex={16}
+  con={14}
+  int={22}
+  cha={20}
+  wis={14}
 
-*Gargantuan Celestial, Chaotic Neutral*
+  saves={[
+    'Intelligence',
+    'Charisma'
+  ]}
 
-<table>
-  <thead>
-    <tr>
-      <th scope="col">CR</th>
-      <th scope="col">AC</th>
-      <th scope="col">HP</th>
-      <th scope="col">Speed</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>20</td>
-      <td>20</td>
-      <td>370</td>
-      <td>30ft.</td>
-    </tr>
-  </tbody>
-</table>
+  skills={[
+    {
+      bonus: 18,
+      name: 'History'
+    },
+    {
+      bonus: 18,
+      name: 'Nature'
+    },
+    {
+      bonus: 14,
+      name: 'Perception'
+    },
+    {
+      bonus: 17,
+      name: 'Performance'
+    }
+  ]}
 
-<table>
-  <thead>
-    <tr>
-      <th scope="col"></th>
-      <th scope="col">STR</th>
-      <th scope="col">DEX</th>
-      <th scope="col">CON</th>
-      <th scope="col">INT</th>
-      <th scope="col">WIS</th>
-      <th scope="col">CHA</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Score</td>
-      <td>10</td>
-      <td>16</td>
-      <td>14</td>
-      <td>22</td>
-      <td>14</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <td>Mod</td>
-      <td>+0</td>
-      <td>+3</td>
-      <td>+2</td>
-      <td>+6</td>
-      <td>+2</td>
-      <td>+5</td>
-    </tr>
-    <tr>
-      <td>Save</td>
-      <td>+0</td>
-      <td>+3</td>
-      <td>+2</td>
-      <td>+12</td>
-      <td>+8</td>
-      <td>+11</td>
-    </tr>
-  </tbody>
-</table>
+  languages={[
+    'Celestial',
+    'telepathy 120ft.'
+  ]}
+  senses={[
+    'darkvision 120ft.',
+    'passive Perception 22'
+  ]}
+  
+  actions={[
+    {
+      name: 'Transmuting Touch',
+      text: [
+        'Melee Spell Attack, +12 to hit, range 5t, 3d6 psychic damage.',
+        'The target must succeed on a DC 20 Constitution saving throw or be Poisoned for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the Effect on itself on a success.'
+      ]
+    },
+    {
+      name: 'Mind Blast (Recharge 5-6)',
+      text: [
+        'The Seer magically emits creates blasts of energy in space. Creatures of the elder Seer\'s choice within 60 feet of it must succeed on a DC 20 Strength saving throw or take 7d10+5 force damage, half as much on a success, and be knocked prone.'
+      ]
+    }
+  ]}
 
-**Skills:** History +18, Nature +18, Perception +14, Performance +17
+  features={[
+    {
+      name: 'Legendary Resistance (3/Day)',
+      text: [
+        'If the Seer fails a saving throw, it can choose to succeed instead.'
+      ]
+    },
+    {
+      name: 'Magic Resistance',
+      text: [
+        'The Seer has advantage on saving throws against spells and other magical effects.'
+      ]
+    }
+  ]}
 
-**Senses:** darkvision 120ft., passive Perception 24
+  lairActionsText="The Seers reside on the little known Plane of Observation, a plane that acts as a nexus between the other planes of existence. It is a cold, barren, and alien place, largely devoid of life. The Seers reside in metal underground bunkers, where they tend to their larvae and observe the other planes from afar. On initiative 20, the Seer takes a lair action to cause one of the following effects; the Seer can't use the same effect two rounds in a row."
+  lairActions={[
+    'A strong force of gravity manifests at a single point, causing the spell Magnify Gravity to fire at 4th level.',
+    'Four five foot wide patches of the ground begin to melt and act as quick sand. Each player on a patch must succeed a DC 15 DEX saving throw or be restrained. This can be contested at the end of each player\'s turn.',
+    'Four players instantly swap positions with each other. If a play that has no fly speed and cannot hover is swapped with a player that is currently in the air, the new player will fall and take the resulting fall damage.'
+  ]}
 
-**Languages:** Celestial, telepathy 120 ft.
+  legendaryActionsText="This creature can take 3 Legendary Actions, choosing from the options below. Only one legendary action can be used at a time, and only at the end of another creature's turn. Spent legendary Actions are regained at the start of each turn."
+  legendaryActions={[
+    {
+      name: 'Cantrip',
+      text: [
+        'The Seer uses a cantrip.'
+      ]
+    },
+    {
+      name: 'Polymorph (Costs 3 Actions)',
+      text: [
+        'The Seer uses the Polymorph spell without the use of a spell slot.'
+      ]
+    },
+    {
+      name: 'Transmuting Touch (Costs 2 Actions)',
+      text: [
+        'The Seer uses its Transmuting Touch.'
+      ]
+    }
+  ]}
 
-#### Features
-
-**Legendary Resistance (3/Day):** If the Seer fails a saving throw, it can choose to succeed instead.
-
-**Magic Resistance:** The Seer has advantage on saving throws against spells and other magical effects.
-
-#### Actions
-
-**Transmuting Touch:** Melee Spell Attack, +12 to hit, range 5t, 3d6 psychic damage. 
-
-The target must succeed on a DC 20 Constitution saving throw or be Poisoned for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the Effect on itself on a success.
-
-**Mind Blast (Recharge 5–6):** The Seer magically emits creates blasts of energy in space. Creatures of the elder Seer's choice within 60 feet of it must succeed on a DC 20 Strength saving throw or take 7d10+5 force damage, half as much on a success, and be knocked prone.
-
-#### Spellcasting
-
-**Level:** 18
-
-**Ability:** Intelligence
-
-**Bonus:** 12
-
-**Save DC:** 20
-
-- **Cantrips:** Mage Hand, Mending, Mind Sliver
-- **1st (4):** Charm Person, Magic Missile, Shield, Thunderwave
-- **2nd (3):** Crown of Madness, Detect Thoughts, Hold Person, Invisibility, Mirror Image
-- **3rd (3):** Blink, Counterspell, Dispel Magic, Fireball
-- **4th (3):** Blight, Hallucinatory Terrain, Polymorph
-- **5th (3):** Conjure Elemental, Scrying
-- **6th (1):** Disintegrate, Globe of Invulnerability
-- **7th (1):** Finger of Death, Reverse Gravity
-- **8th (1):** Maze
-- **9th (1):** Time Stop
-
-#### Lair Actions
-
-The Seers reside on the little known Plane of Observation, a plane that acts as a nexus between the other planes of existence. It is a cold, barren, and alien place, largely devoid of life. The Seers reside in metal underground bunkers, where they tend to their larvae and observe the other planes from afar.
-
-On initiative 20, the Seer takes a lair action to cause one of the following effects; the Seer can't use the same effect two rounds in a row.
-
-- A strong force of gravity manifests at a single point, causing the spell Magnify Gravity to fire at 4th level.
-- Four five foot wide patches of the ground begin to melt and act as quick sand. Each player on a patch must succeed a DC 15 DEX saving throw or be restrained. This can be contested at the end of each player's turn.
-- Four players instantly swap positions with each other. If a play that has no fly speed and cannot hover is swapped with a player that is currently in the air, the new player will fall and take the resulting fall damage.
-
-#### Legendary Actions
-
-This creature can take 3 Legendary Actions, choosing from the options below. Only one legendary action can be used at a time, and only at the end of another creature's turn. Spent legendary Actions are regained at the start of each turn. 
-
-**Cantrip:** The Seer uses the Polymorph spell without the use of a spell slot.
-
-**Polymorph (Costs 3 Actions):** The Seer uses the Polymorph spell without the use of a spell slot.
-
-**Transmuting Touch (Costs 2 Actions):** The Seer uses its Transmuting Touch.
+  spellcastingAbility="Intelligence"
+  spellcastingBonus={12}
+  spellcastingLevel={18}
+  spellcastingSaveDc={20}
+  cantrips={[
+    'Mage Hand',
+    'Mending',
+    'Mind Sliver'
+  ]}
+  firstLevel={[
+    'Charm Person',
+    'Magic Missile',
+    'Shield',
+    'Thunderwave'
+  ]}
+  secondLevel={[
+    'Crown of Madness',
+    'Detect Thoughts',
+    'Hold Person',
+    'Invisibility',
+    'Mirror Image'
+  ]}
+  thirdLevel={[
+    'Blink',
+    'Counterspell',
+    'Dispel Magic',
+    'Fireball'
+  ]}
+  fourthLevel={[
+    'Blight',
+    'Hallucinatory Terrain',
+    'Polymorph'
+  ]}
+  fifthLevel={[
+    'Conjure Elemental',
+    'Scrying'
+  ]}
+  sixthLevel={[
+    'Disintegrate',
+    'Globe of Invulnerability'
+  ]}
+  seventhLevel={[
+    'Finger of Death',
+    'Reverse Gravity'
+  ]}
+  eighthLevel={[
+    'Maze'
+  ]}
+  ninthLevel={[
+    'Time Stop'
+  ]}
+/>
 
 ---
 
-<img alt="Seer Larva Token" src={seerLarvaToken} />
+<NpcBlock
+  name="Seer"
+  tokenAlt="Seer Larva Token"
+  tokenSrc={seerLarvaToken}
+  cr={'8'}
+  ac={18}
+  hp={110}
+  proficiencyBonus={6}
+  speed={[
+    {
+      feet: 10,
+      name: 'Hover'
+    }
+  ]}
+  size="Medium"
+  type="Celestial"
+  alignment="Chaotic Neutral"
 
-#### Seer Larva
+  str={10}
+  dex={14}
+  con={12}
+  int={18}
+  cha={12}
+  wis={18}
 
-*Huge Celestial, Chaotic Neutral*
+  saves={[
+    'Intelligence',
+    'Charisma'
+  ]}
 
-<table>
-  <thead>
-    <tr>
-      <th scope="col">CR</th>
-      <th scope="col">AC</th>
-      <th scope="col">HP</th>
-      <th scope="col">Speed</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>8</td>
-      <td>18</td>
-      <td>110</td>
-      <td>Hover 10ft.</td>
-    </tr>
-  </tbody>
-</table>
+  skills={[
+    {
+      bonus: 12,
+      name: 'History'
+    },
+    {
+      bonus: 12,
+      name: 'Nature'
+    },
+    {
+      bonus: 12,
+      name: 'Perception'
+    },
+    {
+      bonus: 12,
+      name: 'Performance'
+    }
+  ]}
 
-<table>
-  <thead>
-    <tr>
-      <th scope="col"></th>
-      <th scope="col">STR</th>
-      <th scope="col">DEX</th>
-      <th scope="col">CON</th>
-      <th scope="col">INT</th>
-      <th scope="col">WIS</th>
-      <th scope="col">CHA</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Score</td>
-      <td>10</td>
-      <td>14</td>
-      <td>12</td>
-      <td>18</td>
-      <td>12</td>
-      <td>18</td>
-    </tr>
-    <tr>
-      <td>Mod</td>
-      <td>+0</td>
-      <td>+2</td>
-      <td>+1</td>
-      <td>+4</td>
-      <td>+1</td>
-      <td>+4</td>
-    </tr>
-    <tr>
-      <td>Save</td>
-      <td>+0</td>
-      <td>+2</td>
-      <td>+1</td>
-      <td>+7</td>
-      <td>+4</td>
-      <td>+7</td>
-    </tr>
-  </tbody>
-</table>
+  languages={[
+    'Celestial',
+    'telepathy 120ft.'
+  ]}
+  senses={[
+    'darkvision 120ft.',
+    'passive Perception 22'
+  ]}
+  
+  actions={[
+    {
+      name: 'Tentacles',
+      text: [
+        'Melee Weapon Attack, +7 to hit, range 5t, 2d10+4 force damage.',
+        'If the target is Medium or smaller, it is grappled (escape DC 15) and must succeed on a DC 15 Intelligence saving throw or be stunned until this grapple ends.'
+      ]
+    },
+    {
+      name: 'Mind Blast (Recharge 5-6)',
+      text: [
+        'The Seer magically emits creates blasts of energy in space. Creatures of the elder Seer\'s choice within 60 feet of it must succeed on a DC 20 Strength saving throw or take 7d10+5 force damage, half as much on a success, and be knocked prone.'
+      ]
+    }
+  ]}
 
-**Skills:** History +12, Nature +12, Perception: +12, Performance: +12
+  features={[
+    {
+      name: 'Legendary Resistance (3/Day)',
+      text: [
+        'If the Seer fails a saving throw, it can choose to succeed instead.'
+      ]
+    },
+    {
+      name: 'Magic Resistance',
+      text: [
+        'The Seer has advantage on saving throws against spells and other magical effects.'
+      ]
+    }
+  ]}
 
-**Senses:** darkvision 120ft., passive Perception 22
+  lairActionsText=""
+  lairActions={[]}
 
-**Languages:** Celestial, telepathy 120 ft.
+  legendaryActionsText=""
+  legendaryActions={[]}
 
-#### Features
-
-**Legendary Resistance (3/Day):** If the Seer fails a saving throw, it can choose to succeed instead.
-
-**Magic Resistance:** The Seer has advantage on saving throws against spells and other magical effects.
-
-#### Actions
-
-**Tentacles:** Melee Weapon Attack, +7 to hit, range 5t, 2d10+4 force damage. 
-
-If the target is Medium or smaller, it is grappled (escape DC 15) and must succeed on a DC 15 Intelligence saving throw or be stunned until this grapple ends.
-
-**Mind Blast (Recharge 5–6):** The Seer magically emits creates blasts of energy in space. Creatures of the elder Seer's choice within 60 feet of it must succeed on a DC 20 Strength saving throw or take 7d10+5 force damage, half as much on a success, and be knocked prone.
-
-#### Spellcasting
-
-**Level:** 9
-
-**Ability:** Intelligence
-
-**Bonus:** 8
-
-**Save DC:** 16
-
-- **Cantrips:** Mage Hand, Mending, Mind Sliver
-- **1st (4):** Charm Person, Magic Missile, Shield, Thunderwave
-- **2nd (3):** Crown of Madness, Detect Thoughts, Hold Person, Invisibility, Mirror Image
-- **3rd (3):** Blink, Counterspell, Dispel Magic, Fireball
-- **4th (3):** Blight, Hallucinatory Terrain, Polymorph
-- **5th (3):** Conjure Elemental, Scrying
+  spellcastingAbility="Intelligence"
+  spellcastingBonus={8}
+  spellcastingLevel={9}
+  spellcastingSaveDc={16}
+  cantrips={[
+    'Mage Hand',
+    'Mending',
+    'Mind Sliver'
+  ]}
+  firstLevel={[
+    'Charm Person',
+    'Magic Missile',
+    'Shield',
+    'Thunderwave'
+  ]}
+  secondLevel={[
+    'Crown of Madness',
+    'Detect Thoughts',
+    'Hold Person',
+    'Invisibility',
+    'Mirror Image'
+  ]}
+  thirdLevel={[
+    'Blink',
+    'Counterspell',
+    'Dispel Magic',
+    'Fireball'
+  ]}
+  fourthLevel={[
+    'Blight',
+    'Hallucinatory Terrain',
+    'Polymorph'
+  ]}
+  fifthLevel={[
+    'Conjure Elemental',
+    'Scrying'
+  ]}
+  sixthLevel={[]}
+  seventhLevel={[]}
+  eighthLevel={[]}
+  ninthLevel={[]}
+/>
