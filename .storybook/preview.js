@@ -1,4 +1,5 @@
-import '../app/styles/vanilla.css';
+import '../app/design-system/reset.css';
+import '../app/design-system/design-system.css';
 import '../app/styles/global.css';
 
 export const parameters = {

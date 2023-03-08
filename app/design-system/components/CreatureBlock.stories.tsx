@@ -3,17 +3,17 @@ import {
   ComponentMeta
 } from '@storybook/react';
 
-import {NpcBlock} from './NpcBlock';
+import {CreatureBlock} from './CreatureBlock';
 
 import seerToken from '~/images/seers-seer-token.png';
 
 export default {
-  component: NpcBlock,
-  title: 'NpcBlock'
-} as ComponentMeta<typeof NpcBlock>;
+  component: CreatureBlock,
+  title: 'CreatureBlock'
+} as ComponentMeta<typeof CreatureBlock>;
 
-const Template: ComponentStory<typeof NpcBlock> = () => (
-  <NpcBlock
+const Template: ComponentStory<typeof CreatureBlock> = () => (
+  <CreatureBlock
     name="Seer"
     tokenAlt="Seer Token"
     tokenSrc={seerToken}

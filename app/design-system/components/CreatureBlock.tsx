@@ -1,3 +1,5 @@
+import {Card} from './Card';
+
 type Ability =
   'Strength' |
   'Dexterity' |
@@ -51,7 +53,7 @@ interface Speed {
   name: string;
 }
 
-interface NpcBlockProps {
+interface CreatureBlockProps {
   ac: number;
   actions: Action[];
   alignment: Alignment;
@@ -119,7 +121,7 @@ const SPELLCASTING_TABLE = [
   [4, 3, 3, 3, 3, 2, 2, 1, 1]
 ];
 
-export const NpcBlock = ({
+export const CreatureBlock = ({
   ac,
   actions,
   alignment,
@@ -161,7 +163,7 @@ export const NpcBlock = ({
   tokenSrc,
   type,
   wis
-}: NpcBlockProps) => {
+}: CreatureBlockProps) => {
   const getAbilityMod = (score: number, proficient: boolean): string => {
     const mod = Math.floor((score - 10) / 2);
     const adjusted = proficient ? mod + proficiencyBonus : mod;
@@ -177,14 +179,11 @@ export const NpcBlock = ({
         {
           actions.map(action => {
             const {name, text} = action;
-            const [firstItem, ...rest] = text;
 
             return (
               <>
-                <p>
-                  <strong>{name}:</strong> {firstItem}
-                  {rest.map(item => <p>{item}</p>)}
-                </p>
+                <h5>{name}</h5>
+                {text.map(item => <p>{item}</p>)}
               </>
             )
           })
@@ -202,14 +201,11 @@ export const NpcBlock = ({
         {
           features.map(feature => {
             const {name, text} = feature;
-            const [firstItem, ...rest] = text;
 
             return (
               <>
-                <p>
-                  <strong>{name}:</strong> {firstItem}
-                  {rest.map(item => <p>{item}</p>)}
-                </p>
+                <h5>{name}</h5>
+                {text.map(item => <p>{item}</p>)}
               </>
             )
           })
@@ -258,14 +254,11 @@ export const NpcBlock = ({
         {
           legendaryActions.map(legendaryAction => {
             const {name, text} = legendaryAction;
-            const [firstItem, ...rest] = text;
 
             return (
               <>
-                <p>
-                  <strong>{name}:</strong> {firstItem}
-                  {rest.map(item => <p>{item}</p>)}
-                </p>
+                <h5>{name}</h5>
+                {text.map(item => <p>{item}</p>)}
               </>
             )
           })
@@ -327,48 +320,54 @@ export const NpcBlock = ({
     return (
       <>
         <h4>Spellcasting</h4>
-        <p>
-          <strong>Level: </strong>{spellcastingLevel}
-        </p>
-        <p>
-          <strong>Ability: </strong>{spellcastingAbility}
-        </p>
-        <p>
-          <strong>Bonus: </strong>{spellcastingBonus}
-        </p>
-        <p>
-          <strong>Save DC: </strong>{spellcastingSaveDc}
-        </p>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Level</th>
+              <th scope="col">Ability</th>
+              <th scope="col">Ability Modifier</th>
+              <th scope="col">Save DC</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{spellcastingLevel}</td>
+              <td>{spellcastingAbility}</td>
+              <td>{spellcastingBonus}</td>
+              <td>{spellcastingSaveDc}</td>
+            </tr>
+          </tbody>
+        </table>
         <ul>
           <li>
             <strong>Cantrips:</strong> {cantrips.join(', ')}
           </li>
           <li>
-            <strong>1st (${spellSlots[0]}):</strong> {firstLevel.join(', ')}
+            <strong>1st ({spellSlots[0]}):</strong> {firstLevel.join(', ')}
           </li>
           <li>
-            <strong>2nd (${spellSlots[1]}):</strong> {secondLevel.join(', ')}
+            <strong>2nd ({spellSlots[1]}):</strong> {secondLevel.join(', ')}
           </li>
           <li>
-            <strong>3rd (${spellSlots[2]}):</strong> {thirdLevel.join(', ')}
+            <strong>3rd ({spellSlots[2]}):</strong> {thirdLevel.join(', ')}
           </li>
           <li>
-            <strong>4th (${spellSlots[3]}):</strong> {fourthLevel.join(', ')}
+            <strong>4th ({spellSlots[3]}):</strong> {fourthLevel.join(', ')}
           </li>
           <li>
-            <strong>5th (${spellSlots[4]}):</strong> {fifthLevel.join(', ')}
+            <strong>5th ({spellSlots[4]}):</strong> {fifthLevel.join(', ')}
           </li>
           <li>
-            <strong>6th (${spellSlots[5]}):</strong> {sixthLevel.join(', ')}
+            <strong>6th ({spellSlots[5]}):</strong> {sixthLevel.join(', ')}
           </li>
           <li>
-            <strong>7th (${spellSlots[6]}):</strong> {seventhLevel.join(', ')}
+            <strong>7th ({spellSlots[6]}):</strong> {seventhLevel.join(', ')}
           </li>
           <li>
-            <strong>8th (${spellSlots[7]}):</strong> {eighthLevel.join(', ')}
+            <strong>8th ({spellSlots[7]}):</strong> {eighthLevel.join(', ')}
           </li>
           <li>
-            <strong>9th (${spellSlots[8]}):</strong> {ninthLevel.join(', ')}
+            <strong>9th ({spellSlots[8]}):</strong> {ninthLevel.join(', ')}
           </li>
         </ul>
       </>
@@ -376,82 +375,85 @@ export const NpcBlock = ({
   };
 
   return (
-    <div>
-      <h3>{name}</h3>
-      <img
-        alt={tokenAlt}
-        src={tokenSrc}/>
-      <p>
-        <em>{size} {type}, {alignment}</em>
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th scope="col">CR</th>
-            <th scope="col">AC</th>
-            <th scope="col">HP</th>
-            <th scope="col">Speed</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{cr}</td>
-            <td>{ac}</td>
-            <td>{hp}</td>
-            <td>{getSpeed()}</td>
-          </tr>
-        </tbody>
-      </table>
-      <table>
-        <thead>
-          <tr>
-            <th scope="col"></th>
-            <th scope="col">STR</th>
-            <th scope="col">DEX</th>
-            <th scope="col">CON</th>
-            <th scope="col">INT</th>
-            <th scope="col">WIS</th>
-            <th scope="col">CHA</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Score</td>
-            <td>{str}</td>
-            <td>{dex}</td>
-            <td>{con}</td>
-            <td>{int}</td>
-            <td>{wis}</td>
-            <td>{cha}</td>
-          </tr>
-          <tr>
-            <td>Mod</td>
-            <td>{getAbilityMod(str, false)}</td>
-            <td>{getAbilityMod(dex, false)}</td>
-            <td>{getAbilityMod(con, false)}</td>
-            <td>{getAbilityMod(int, false)}</td>
-            <td>{getAbilityMod(wis, false)}</td>
-            <td>{getAbilityMod(cha, false)}</td>
-          </tr>
-          <tr>
-            <td>Save</td>
-            <td>{getAbilityMod(str, getIsProficient('Strength'))}</td>
-            <td>{getAbilityMod(dex, getIsProficient('Dexterity'))}</td>
-            <td>{getAbilityMod(con, getIsProficient('Constitution'))}</td>
-            <td>{getAbilityMod(int, getIsProficient('Intelligence'))}</td>
-            <td>{getAbilityMod(wis, getIsProficient('Wisdom'))}</td>
-            <td>{getAbilityMod(cha, getIsProficient('Charisma'))}</td>
-          </tr>
-        </tbody>
-      </table>
-      {getSkills()}
-      {getSenses()}
-      {getLanguages()}
-      {getFeatures()}
-      {getActions()}
-      {getLairActions()}
-      {getLegendaryActions()}
-      {getSpellbook()}
-    </div>
+    <Card>
+      <div className="havok-dnd-creature-block">
+        <div className="havok-dnd-creature-block-cr">
+          CR {cr}
+        </div>
+        <div className="havok-dnd-creature-block-header">
+          <img
+            alt={tokenAlt}
+            src={tokenSrc}/>
+          <div>
+            <h3>{name}</h3>
+            <p>
+              {size} {type}, {alignment}
+            </p>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">AC</th>
+              <th scope="col">HP</th>
+              <th scope="col">Speed</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{ac}</td>
+              <td>{hp}</td>
+              <td>{getSpeed()}</td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">STR</th>
+              <th scope="col">DEX</th>
+              <th scope="col">CON</th>
+              <th scope="col">INT</th>
+              <th scope="col">WIS</th>
+              <th scope="col">CHA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{str}</td>
+              <td>{dex}</td>
+              <td>{con}</td>
+              <td>{int}</td>
+              <td>{wis}</td>
+              <td>{cha}</td>
+            </tr>
+            <tr>
+              <td>{getAbilityMod(str, false)}</td>
+              <td>{getAbilityMod(dex, false)}</td>
+              <td>{getAbilityMod(con, false)}</td>
+              <td>{getAbilityMod(int, false)}</td>
+              <td>{getAbilityMod(wis, false)}</td>
+              <td>{getAbilityMod(cha, false)}</td>
+            </tr>
+            <tr>
+              <td>{getAbilityMod(str, getIsProficient('Strength'))}</td>
+              <td>{getAbilityMod(dex, getIsProficient('Dexterity'))}</td>
+              <td>{getAbilityMod(con, getIsProficient('Constitution'))}</td>
+              <td>{getAbilityMod(int, getIsProficient('Intelligence'))}</td>
+              <td>{getAbilityMod(wis, getIsProficient('Wisdom'))}</td>
+              <td>{getAbilityMod(cha, getIsProficient('Charisma'))}</td>
+            </tr>
+          </tbody>
+        </table>
+        {getSkills()}
+        {getSenses()}
+        {getLanguages()}
+        {getFeatures()}
+        {getActions()}
+        {getLairActions()}
+        {getLegendaryActions()}
+        {getSpellbook()}
+      </div>
+    </Card>
   );
 };

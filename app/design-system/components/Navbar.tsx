@@ -1,17 +1,15 @@
-import { Link } from '@remix-run/react';
-
 import logo from '~/images/logo.png';
 
 export const Navbar = () => {
   return (
-    <nav className="navbar">
-      <Link className="navbar-logo" to="/">
+    <nav className="havok-dnd-navbar">
+      <a href="/" className="havok-dnd-navbar-logo">
         <img alt="logo" src={logo}/>
         <h1>Havok's Corner</h1>
-      </Link>
-      <Link to="/">
+      </a>
+      <a href="/">
         Home
-      </Link>
+      </a>
     </nav>
   );
 };
