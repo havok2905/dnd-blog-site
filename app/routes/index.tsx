@@ -4,7 +4,7 @@ import {Button} from '~/design-system/components/Button';
 import {Card} from '~/design-system/components/Card';
 import {Page} from '~/design-system/components/Page';
 
-import * as ffxivBurningOfTheGreatwood from "./homebrew/adventures/ffxiv-burning-of-the-greatwood.mdx";
+import {meta as ffxivBurningOfTheGreatwood} from "./homebrew/adventures/ffxiv-burning-of-the-greatwood";
 
 import {meta as seers} from "./homebrew/creatures/seers";
 

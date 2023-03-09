@@ -6,6 +6,10 @@
   text-transform: uppercase;
 }
 
+.home-page-title-section h1 {
+  text-shadow: 0 0 10px var(--havok-dnd-color-black-0);
+}
+
 .home-page-title-section img {
   height: 200px;
   width: 200px;

@@ -55,42 +55,48 @@ interface Speed {
 
 interface CreatureBlockProps {
   ac: number;
-  actions: Action[];
+  actions?: Action[];
   alignment: Alignment;
-  cantrips: string[];
+  cantrips?: string[];
   cha: number;
   con: number;
+  conditionImmunities?: string[];
+  conditionResistances?: string[];
+  conditionVulnerabilities?: string[];
   cr: string;
+  damageImmunities?: string[];
+  damageResistances?: string[];
+  damageVulnerabilities?: string[];
   dex: number;
-  eighthLevel: string[];
-  features: Feature[];
-  fifthLevel: string[];
-  firstLevel: string[];
-  fourthLevel: string[];
+  eighthLevel?: string[];
+  features?: Feature[];
+  fifthLevel?: string[];
+  firstLevel?: string[];
+  fourthLevel?: string[];
   hp: number;
   int: number;
-  lairActions: string[];
-  lairActionsText: string;
-  languages: string[];
-  legendaryActions: LegendaryAction[];
-  legendaryActionsText: string;
+  lairActions?: string[];
+  lairActionsText?: string;
+  languages?: string[];
+  legendaryActions?: LegendaryAction[];
+  legendaryActionsText?: string;
   name: string;
-  ninthLevel: string[];
+  ninthLevel?: string[];
   proficiencyBonus: number;
-  saves: Ability[];
-  secondLevel: string[];
-  senses: string[];
-  seventhLevel: string[];
-  sixthLevel: string[];
-  skills: Skill[];
+  saves?: Ability[];
+  secondLevel?: string[];
+  senses?: string[];
+  seventhLevel?: string[];
+  sixthLevel?: string[];
+  skills?: Skill[];
   size: Size;
   str: number;
   speed: Speed[];
-  spellcastingAbility: Ability;
-  spellcastingBonus: number;
-  spellcastingLevel: number;
-  spellcastingSaveDc: number;
-  thirdLevel: string[];
+  spellcastingAbility?: Ability;
+  spellcastingBonus?: number;
+  spellcastingLevel?: number;
+  spellcastingSaveDc?: number;
+  thirdLevel?: string[];
   tokenAlt: string;
   tokenSrc: string;
   type: string;
@@ -128,7 +134,13 @@ export const CreatureBlock = ({
   cantrips,
   cha,
   con,
+  conditionImmunities,
+  conditionResistances,
+  conditionVulnerabilities,
   cr,
+  damageImmunities,
+  damageResistances,
+  damageVulnerabilities,
   dex,
   eighthLevel,
   features,
@@ -171,7 +183,7 @@ export const CreatureBlock = ({
   };
 
   const getActions = (): React.ReactNode | null => {
-    if (!actions.length) return null;
+    if (!actions?.length) return null;
 
     return (
       <>
@@ -193,7 +205,7 @@ export const CreatureBlock = ({
   };
 
   const getFeatures = (): React.ReactNode | null => {
-    if (!features.length) return null;
+    if (!features?.length) return null;
 
     return (
       <>
@@ -215,11 +227,12 @@ export const CreatureBlock = ({
   };
 
   const getIsProficient = (ability: Ability): boolean => {
+    if (!saves) return false;
     return saves.includes(ability);
   };
 
   const getLairActions = (): React.ReactNode | null => {
-    if (!lairActions.length) return null;
+    if (!lairActions?.length) return null;
 
     return (
       <>
@@ -232,20 +245,8 @@ export const CreatureBlock = ({
     )
   };
 
-  const getLanguages = (): React.ReactNode | null => {
-    if (!languages.length) return null;
-   
-    const languagesString = languages.join(', ');
-
-    return (
-      <p>
-        <strong>Languages: </strong> {languagesString}
-      </p>
-    );
-  };
-
   const getLegendaryActions = (): React.ReactNode | null => {
-    if (!legendaryActions.length) return null;
+    if (!legendaryActions?.length) return null;
 
     return (
       <>
@@ -267,20 +268,8 @@ export const CreatureBlock = ({
     );
   };
 
-  const getSenses = (): React.ReactNode | null => {
-    if (!senses.length) return null;
-   
-    const sensesString = senses.join(', ');
-
-    return (
-      <p>
-        <strong>Senses: </strong> {sensesString}
-      </p>
-    );
-  };
-
   const getSkills = (): React.ReactNode | null => {
-    if (!skills.length) return null;
+    if (!skills?.length) return null;
 
     const skillsString = skills.map(skill => {
       const {bonus, name} = skill;
@@ -303,19 +292,19 @@ export const CreatureBlock = ({
 
   const getSpellbook = (): React.ReactNode | null => {
     if (
-      !cantrips.length &&
-      !firstLevel.length &&
-      !secondLevel.length &&
-      !thirdLevel.length &&
-      !fourthLevel.length &&
-      !fifthLevel.length &&
-      !sixthLevel.length &&
-      !seventhLevel.length &&
-      !eighthLevel.length &&
-      !ninthLevel.length
+      !cantrips?.length &&
+      !firstLevel?.length &&
+      !secondLevel?.length &&
+      !thirdLevel?.length &&
+      !fourthLevel?.length &&
+      !fifthLevel?.length &&
+      !sixthLevel?.length &&
+      !seventhLevel?.length &&
+      !eighthLevel?.length &&
+      !ninthLevel?.length
     ) return null;
 
-    const spellSlots = SPELLCASTING_TABLE[spellcastingLevel];
+    const spellSlots = SPELLCASTING_TABLE[spellcastingLevel ?? 0];
 
     return (
       <>
@@ -340,34 +329,34 @@ export const CreatureBlock = ({
         </table>
         <ul>
           <li>
-            <strong>Cantrips:</strong> {cantrips.join(', ')}
+            <strong>Cantrips:</strong> {cantrips?.join(', ')}
           </li>
           <li>
-            <strong>1st ({spellSlots[0]}):</strong> {firstLevel.join(', ')}
+            <strong>1st ({spellSlots[0]}):</strong> {firstLevel?.join(', ')}
           </li>
           <li>
-            <strong>2nd ({spellSlots[1]}):</strong> {secondLevel.join(', ')}
+            <strong>2nd ({spellSlots[1]}):</strong> {secondLevel?.join(', ')}
           </li>
           <li>
-            <strong>3rd ({spellSlots[2]}):</strong> {thirdLevel.join(', ')}
+            <strong>3rd ({spellSlots[2]}):</strong> {thirdLevel?.join(', ')}
           </li>
           <li>
-            <strong>4th ({spellSlots[3]}):</strong> {fourthLevel.join(', ')}
+            <strong>4th ({spellSlots[3]}):</strong> {fourthLevel?.join(', ')}
           </li>
           <li>
-            <strong>5th ({spellSlots[4]}):</strong> {fifthLevel.join(', ')}
+            <strong>5th ({spellSlots[4]}):</strong> {fifthLevel?.join(', ')}
           </li>
           <li>
-            <strong>6th ({spellSlots[5]}):</strong> {sixthLevel.join(', ')}
+            <strong>6th ({spellSlots[5]}):</strong> {sixthLevel?.join(', ')}
           </li>
           <li>
-            <strong>7th ({spellSlots[6]}):</strong> {seventhLevel.join(', ')}
+            <strong>7th ({spellSlots[6]}):</strong> {seventhLevel?.join(', ')}
           </li>
           <li>
-            <strong>8th ({spellSlots[7]}):</strong> {eighthLevel.join(', ')}
+            <strong>8th ({spellSlots[7]}):</strong> {eighthLevel?.join(', ')}
           </li>
           <li>
-            <strong>9th ({spellSlots[8]}):</strong> {ninthLevel.join(', ')}
+            <strong>9th ({spellSlots[8]}):</strong> {ninthLevel?.join(', ')}
           </li>
         </ul>
       </>
@@ -446,8 +435,14 @@ export const CreatureBlock = ({
           </tbody>
         </table>
         {getSkills()}
-        {getSenses()}
-        {getLanguages()}
+        {senses && senses.length && <p><strong>Senses:</strong> {senses?.join(', ')}</p>}
+        {languages && languages.length && <p><strong>Languages:</strong> {languages?.join(', ')}</p>}
+        {conditionImmunities && conditionImmunities.length && <p><strong>Condition Immunities:</strong> {conditionImmunities?.join(', ')}</p>}
+        {conditionResistances && conditionResistances.length && <p><strong>Condition Resistances:</strong> {conditionResistances?.join(', ')}</p>}
+        {conditionVulnerabilities && conditionVulnerabilities.length && <p><strong>Condition Vulnerabilities:</strong> {conditionVulnerabilities?.join(', ')}</p>}
+        {damageImmunities && damageImmunities.length && <p><strong>Damage Immunities:</strong> {damageImmunities?.join(', ')}</p>}
+        {damageResistances && damageResistances.length && <p><strong>Damage Resistances:</strong> {damageResistances?.join(', ')}</p>}
+        {damageVulnerabilities && damageVulnerabilities.length && <p><strong>Damage Vulnerabilities:</strong> {damageVulnerabilities?.join(', ')}</p>}
         {getFeatures()}
         {getActions()}
         {getLairActions()}

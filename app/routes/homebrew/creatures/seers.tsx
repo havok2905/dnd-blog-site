@@ -1,5 +1,3 @@
-import type { MetaFunction } from "@remix-run/node";
-
 import {Navbar} from '~/design-system/components/Navbar';
 
 import {Card} from '~/design-system/components/Card';

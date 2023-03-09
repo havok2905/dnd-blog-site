@@ -72,10 +72,10 @@ export default () => {
           <p>
             The Valley Dwarves were the first to leave the tunnels under the sands of Habash, venturing west towards the Scarlet Range mountains. They established tribes along the rivers that sliced between the rock, mining the mountains for material for their new cities. With an abundance of materials to work with, these dwarves began to excel at invention and engineering. They eventually abandoned the rivers and moved into their vast network of mines, returning again to the darkness that their ancestors once thrived in.
           </p>
-          <p>
-            <strong>Ability Score Increase:</strong> Sand dwarves gain +1 to their Intelligence score.
-          </p>
         </Card>
+        <p>
+          <strong>Ability Score Increase:</strong> Sand dwarves gain +1 to their Intelligence score.
+        </p>
         <p>
           <strong>Artisan's Expertise:</strong> You gain proficiency with two kinds of artisan's tools of your choice. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.
         </p>
