@@ -4,6 +4,7 @@ import {Card} from '~/design-system/components/Card';
 import {CreatureBlock} from '~/design-system/components/CreatureBlock';
 import {ImageWithCaption} from '~/design-system/components/ImageWithCaption';
 import {Page} from '~/design-system/components/Page';
+import {Quote} from '~/design-system/components/Quote';
 
 import ffxivCoverImage from '~/images/ffxiv-cover-image.png';
 import ffxivMap from '~/images/ffxiv-map.png';
@@ -30,39 +31,37 @@ export default () => {
       <Page>
         <img alt="cover image" src={ffxivCoverImage}/>
         <h2>FFXIV - Burning of the Greatwood</h2>
-        <h3>Context</h3>
-        <p>
-          This adventure takes place two years prior to the Warrior of Light traveling to the First. It explores the assault on the Night's Blessed and Y'shtola's shepherding of them to safety within Slitherbough.
-        </p>
-        <p>
-          <strong>Expected Level:</strong> 5
-        </p>
-        <p>
-          <strong>Expected Length:</strong> 2-3 hour session
-        </p>
-        <p>
-          <strong>System:</strong> D&D 5e
-        </p>
-        <p>
-          <strong>Source Material:</strong>
-          {' '}
-          <a href="https://www.gmbinder.com/share/-LsDqsNbupzeLhkTIcPv">https://www.gmbinder.com/share/-LsDqsNbupzeLhkTIcPv</a>
-        </p>
-        <p>
-          <strong>FFXIV Content:</strong> Shadowbringers
-        </p>
-        <p>
-          Characters may also start with one uncommon item each and 10,000 gil.
-        </p>
+        <Card title="Context">
+          <p>
+            This adventure takes place two years prior to the Warrior of Light traveling to the First. It explores the assault on the Night's Blessed and Y'shtola's shepherding of them to safety within Slitherbough.
+          </p>
+          <p>
+            <strong>Expected Level:</strong> 5
+          </p>
+          <p>
+            <strong>Expected Length:</strong> 2-3 hour session
+          </p>
+          <p>
+            <strong>System:</strong> D&D 5e
+          </p>
+          <p>
+            <strong>Source Material:</strong>
+            {' '}
+            <a href="https://www.gmbinder.com/share/-LsDqsNbupzeLhkTIcPv">https://www.gmbinder.com/share/-LsDqsNbupzeLhkTIcPv</a>
+          </p>
+          <p>
+            <strong>FFXIV Content:</strong> Shadowbringers
+          </p>
+          <p>
+            Characters may also start with one uncommon item each and 10,000 gil.
+          </p>
+        </Card>
         <h3>Introduction</h3>
-        <Card>
+        <Quote citation="Ardbert">
           <p>
             "No matter how far he goes, man cannot resist looking back on the path he has walked. The untold stories and secrets of the past can be more alluring than the promise of tomorrow. And so he braves the forests of Rak'tika in search of mystery and wonder... Of Ronka, to which all seekers of hidden truths are inevitably drawn."
           </p>
-          <p>
-            - Ardbert
-          </p>
-        </Card>
+        </Quote>
         <h4>The First</h4>
         <p>
           The worlds of FFXIV are split into reflections of a central world. This adventure takes place in a reflection known as the First. This world has suffered greatly at the hands of a cataclysmic event known as The Flood of Light. This had a number of effects on the First; an everlasting day of blinding light, residents transforming into monstrous creatures, as well as mass death and destruction of 90% of the planet's land. This adventure takes place in that remaining 10%.
@@ -79,22 +78,22 @@ export default () => {
           Y'shtola is composed and the voice of reason, often referred to by others as a "Cultured Conjurer". She is sharp witted, to the point, and cynical of those with a penchant for secrecy. Her alias, "Master Matoya", is a reference to her old mentor, with whom she regards with a deep respect and annoyance. An accident in her past has rendered her blind, though she has learned to see through the sense of the aether around her.
         </p>
         <h3>Meeting "Master Matoya"</h3>
-        <Card>
+        <Quote>
           <p>
             Beams of light slice through the dense foliage overhead, the everlasting flood of light providing just a dim glow for the forest floors of the Rak'tika Greatwood. Nestled deep within, a wooden fortress flanked by watchtowers at every corner, stands tall. Behind its walls, a bustling crowd of dark cloaked figures go about their daily business. You, however, seek a woman by the name of "Master Matoya". It is her that summoned you here and holds the details of your mission. 
           </p>
-        </Card>
+        </Quote>
         <p>
           The party finds themselves in the bustling headquarters of the Night's Blessed, a group that worships the darkness in a world flooded with light. They make their home in the shadows of the The Rak'tika Greatwood.
         </p>
         <p>
           It is under these lush canopies that the party is summoned by a miqo'te going by the alias “Master Matoya”, though her actual name is Y'shtola Rhul. She has commissioned the party for assistance in excavating ruins deep in the dense forests.
         </p>
-        <Card>
+        <Quote>
           <p>
             A white haired miqo'te woman sits alone at a table, a book in one hand and a cup of tea in the other. She appears to be reading, though the light in her eyes has long since faded to a milky white, appearing to be blind. Nonetheless, she closes her book to look up at you and smiles. With an air of professionalism, she greets you. "Well, this is a pleasant surprise. You're early. I am Master Matoya."
           </p>
-        </Card>
+        </Quote>
         <p>
           Y'shtola will mention the following upfront:
         </p>
@@ -129,11 +128,11 @@ export default () => {
         <p>
           It is not long after introductions that an explosion is heard and smoke is seen on the horizon. Heat begins to creep ever closer to your group.
         </p>
-        <Card>
+        <Quote>
           <p>
             Conversation is cut short by the sound of screams and billowing heat creeping its way ever closer in your direction. Smoke rises to the treetops and the beams of light that would typically penetrate the canopy is replaces by the warm glow of flames. Night's Blessed sprint away from the gates, chased by a wave of white skinned demonic creatures of every shape and size. Y'shtola rises from her chair, staff in hand, and unleashes a powerful jet of flame towards the invaders. "Change of plans!", she exclaims.
           </p>
-        </Card>
+        </Quote>
         <p>
           The camp is currently being invaded by a hoard of creatures called sin eaters. These creatures are those have have been consumed by the Flood of Light and transformed into ravenously hungry monsters. They also can infect others and transform them into beings like themselves.
         </p>
@@ -235,11 +234,11 @@ export default () => {
           This temple is one in remembrance and denouncement of a people known as the Ascians. They provided much of the power and knowledge that forged Ronka into the thriving powerhouse it was, but also were found to be those that would indirectly cause the Flood of Light.
         </p>
         <h4>Room A: The Lobby</h4>
-        <Card>
+        <Quote>
           <p>
             You enter a vast hall, vaulted ceilings looming several stories overhead. Mist hugs the floor, weaving between the thick stone columns that divide the room into a grid. The walls are marked with intricate unintelligible script. Colorful paintings of a thriving stonework city coat the walls.
           </p>
-        </Card>
+        </Quote>
         <p>
           4 <strong>Sin Eaters</strong> patrol the room. They are openly hostile and will attack the party on sight.
         </p>
@@ -250,20 +249,20 @@ export default () => {
           A casting of Comprehend Languages, will reveal the room to be a monument to the "Masked Angels", who came down to teach the Ronkans in the ways of the arcane.
         </p>
         <h4>Room B: The Crossroads</h4>
-        <Card>
+        <Quote>
           <p>
             Two doors flank the east and west corridors of this room. To the west, the door hangs open a sliver and you can hear a low groan of pain from within.
           </p>
-        </Card>
+        </Quote>
         <p>
           The door to the left is open and the door to the right is unlocked.
         </p>
         <h4>Room C: The Fallen Adventurer</h4>
-        <Card>
+        <Quote>
           <p>
             A young au-ra woman lays curled on the floor, the contents of her bag spilled open in front of her. Her hair is black and her eyes gold. A leather tome is at her side. A glowing blue, rodent-like, creature licks at her face.
           </p>
-        </Card>
+        </Quote>
         <p>
           This young adventurer's name is Khorichi. She attempted to brave exploring the ruins and was infected by the sin eaters in the previous room. She is currently at one hit point and has six days remaining before she fully transforms.
         </p>
@@ -271,11 +270,11 @@ export default () => {
           Khorichi came here looking for treasure, but did not anticipate the dangers within. She knows her time is limited and would like to do some good before she fully transforms and loses herself. She is not certain of how much time she has remaining though.
         </p>
         <h4>Room D: The Way is Blocked</h4>
-        <Card>
+        <Quote>
           <p>
             Rubble blocks a long winding corridor ahead, the ceiling having caved in. Space between the boulders seem large enough for small creatures to fit through.
           </p>
-        </Card>
+        </Quote>
         <p>
           The rubble has an AC of 10 and 20 hit points. Attacking the rubble alerts creatures further ahead in the dungeon to the party's presence. Alternatively, an hour can be spent manually clearing the rubble by hand.
         </p>
@@ -286,20 +285,20 @@ export default () => {
           <strong>Amulet of Health:</strong> Wondrous item, rare (requires attunement) Your Constitution score is 19 while you wear this amulet. It has no effect on you if your Constitution is already 19 or higher.
         </p>
         <h4>Room E: The Commander</h4>
-        <Card>
+        <Quote>
           <p>
             An angelic woman with pale cracked skin observes you as you enter the hall. Her abnormally long arms and tipped with long talons. She hovers just a few inches off the ground, supported by a pair of effervescent wings. Her wings refract a dim glow emanating from her body, casting prismatic rays of color across the stone tile floor.
           </p>
-        </Card>
+        </Quote>
         <p>
           1 <strong>Commanding Sin Eater</strong> and 2 <strong>Sin Eaters</strong> are in this room. If the players announced their presence, when clearing the rubble, the 2 <strong>Sin Eaters</strong> are flanking the entrance of this room and gain a surprise round on the party. These creatures are hostile on sight and will fight to the death.
         </p>
         <h4>Room F: The Mural</h4>
-        <Card>
+        <Quote>
           <p>
             A mosaic art piece of what appear to be spirits of light and dark, once proudly displayed at the far end of this champer, has been defaced by a crudely painted scene. A red masked figure in black robes looms over a stonework city, its buildings in flame and people running from invading armies.
           </p>
-        </Card>
+        </Quote>
         <p>
           There are two chests in this room that are locked. They can be unlocked with a DC 12 check with thieves' tools. The north chest contains 100,000 gil worth of jewels and old coins. The southern chest contains an Ioun Stone of Greater Absorption. It has the added effect of absorbing light and staving off transformation into a sin-eater, as long as it is worn.
         </p>

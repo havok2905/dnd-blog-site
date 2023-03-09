@@ -3,6 +3,7 @@ import {Navbar} from '~/design-system/components/Navbar';
 import {Card} from '~/design-system/components/Card';
 import {ImageWithCaption} from '~/design-system/components/ImageWithCaption';
 import {Page} from '~/design-system/components/Page';
+import {Quote} from '~/design-system/components/Quote';
 
 import serpentesExample from '~/images/serpentes-example.png';
 
@@ -26,7 +27,7 @@ export default () => {
           imageAlt="Serpentes"
           imageCaption="Serpentes"
           imageSrc={serpentesExample}/>
-        <Card>
+        <Quote>
           <p>
             The sun rises over the vast expanse of the Emerald Sea and the grasslands begin to rustle on a breezeless morning. Hands rise from the green canopy, to the sky, in worship of a new dawn and the warmth to melt their frost laden homes.
           </p>
@@ -36,7 +37,7 @@ export default () => {
           <p>
             A halfling skiff rides the wind, scouting the horizon for threats. They are pulled down into a burrow and slain without even a chance to scream.
           </p>
-        </Card>
+        </Quote>
         <Card>
           <p>
             These are the Serpentes, a reptilian people with snake-like lower halves and humanoid upper torsos. They are the original inhabitants of the Emerald Sea and the region of Inis, crafting their underground homes under the cover of the tall grasslands that span the region. 

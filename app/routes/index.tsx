@@ -1,8 +1,9 @@
-import {Navbar} from '~/design-system/components/Navbar';
+import {Link} from '@remix-run/react';
 
-import {Button} from '~/design-system/components/Button';
 import {Card} from '~/design-system/components/Card';
+import {Navbar} from '~/design-system/components/Navbar';
 import {Page} from '~/design-system/components/Page';
+import {Quote} from '~/design-system/components/Quote';
 
 import {meta as ffxivBurningOfTheGreatwood} from "./homebrew/adventures/ffxiv-burning-of-the-greatwood";
 
@@ -40,14 +41,16 @@ const indexRoute = () => {
     } = post?.attributes?.meta;
 
     return (
-      <Card title={title}>
+      <Card
+        footer={(
+          <Link to={path}>
+            View
+          </Link>
+        )}
+        title={title}>
         <p>
           {description}
         </p>
-        <Button
-          isAnchor
-          path={path}
-          text="View" />
       </Card>
     );
   };
@@ -74,12 +77,12 @@ const indexRoute = () => {
         {getPost(halflings)}
         {getPost(theVidi)}
         {getPost(serpentes)}
-        <Card>
+        <h3>Creatures</h3>
+        <Quote>
           <p>
             !!!SPOILER TERRITORY AHEAD!!!
           </p>
-        </Card>
-        <h3>Creatures</h3>
+        </Quote>
         {getPost(seers)}
       </Page>
     </>

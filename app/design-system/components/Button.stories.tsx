@@ -10,17 +10,25 @@ export default {
   title: 'Button'
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => (
-  <Button
-    isAnchor={args.isAnchor}
-    path="#"
-    text="Lorem Ipsum"/>
-);
+const Template: ComponentStory<typeof Button> = (args) => {
+  const {
+    isAnchor,
+    path,
+    text
+  } = args;
+  
+  return (
+    <Button
+      isAnchor={isAnchor}
+      path={path}
+      text={text}/>
+  );
+};
 
 export const Default = Template.bind({});
 
-Default.argTypes = {
-  isAnchor: {
-    type: 'boolean'
-  }
+Default.args = {
+  isAnchor: false,
+  path: '#',
+  text: 'Lorem Ipsum'
 };

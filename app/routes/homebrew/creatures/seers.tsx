@@ -1,8 +1,8 @@
 import {Navbar} from '~/design-system/components/Navbar';
 
-import {Card} from '~/design-system/components/Card';
 import {CreatureBlock} from '~/design-system/components/CreatureBlock';
 import {Page} from '~/design-system/components/Page';
+import {Quote} from '~/design-system/components/Quote';
 
 import coverImage from '~/images/seers-cover-image.png';
 import seerToken from '~/images/seers-seer-token.png';
@@ -24,10 +24,10 @@ export default () => {
       <Navbar/>
       <Page>
         <img alt="seers cover image" src={coverImage}/>
-        <Card
-          subtitle="The Arctic Anomaly at Celeste"
-          title="Transcript, Montague Mining Company Case 598KC">
+        <Quote>
           <>
+            <h3>The Arctic Anomaly at Celeste</h3>
+            <h4>Transcript, Montague Mining Company Case 598KC</h4>
             <ul>
               <li><strong>Subject ID:</strong> 598KC-01</li>
               <li><strong>Interviewer ID:</strong> MMPE-20304</li>
@@ -48,7 +48,7 @@ export default () => {
               <strong>Subject:</strong> "Go to hell."
             </p>
           </>
-        </Card>
+        </Quote>
         <h2>Seers</h2>
         <p>
           The Seers are a celestial race of beings that were created as the original children of the old gods. They inherited their creator's ability to tap into and bend the fabric of reality, but little of old gods' will to use their powers for others.
@@ -63,11 +63,11 @@ export default () => {
           Seers do not naturally reproduce. Instead, after a millennia of studying their own creation, Seers use their power to craft new Seers through magic. These larva are crafted in vast birthing vats what span the underground. They require immense attention and centuries of growth to transform into a fully realized Seer. They complete this process by slowly siphining the lifeforce of mortal beings on the Material plane from afar, often acting as celestial patrons. Until this moment though, a larva will spend the majority of their time feeding from the safety of their subterranean homes.
         </p>
         <h2>The Nexus ( Plane of Observation )</h2>
-        <Card>
+        <Quote>
           <p>
             Swirling, lightning blue, streams of light converge into miniature suns, bobbing in place against a gradient skyline of deep purples of navy. The ground is smooth, flat, and just slightly reflective, There is no breeze, the air dry and cold, each breath visible in front of ones face. Scattered across the horizon are hundreds of identical steel huts, each granting entryway to a maze of undergound metal tunnels.
           </p>
-        </Card>
+        </Quote>
         <p>
           The Plane of Observation, also referred to as "The Nexus" is the domain of the old gods, the center of the planar system, and where they first crafted the Seers. It was here where the Seers were first created and where they would return after their banishment from the Material Plane.
         </p>

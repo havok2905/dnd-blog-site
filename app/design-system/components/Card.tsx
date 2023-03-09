@@ -2,12 +2,14 @@ import {ReactNode} from 'react';
 
 interface CardProps {
   children: ReactNode;
+  footer?: ReactNode;
   subtitle?: string;
   title?: string;
 }
 
 export const Card = ({
   children,
+  footer,
   subtitle,
   title
 }: CardProps) => {
@@ -22,6 +24,13 @@ export const Card = ({
         }
         {children}
       </div>
+      {
+        footer && (
+          <div className='havok-dnd-card-footer'>
+            {footer}
+          </div>
+        )
+      }
     </div>
   );
 };

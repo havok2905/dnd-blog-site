@@ -3,7 +3,7 @@
 
   --havok-dnd-border-radius: 6px;
 
-  --havok-dnd-color-beige-1: #e6dab8;
+  --havok-dnd-color-beige-1: #efe9d8;
   --havok-dnd-color-beige-2: #e6d4a1;
 
   --havok-dnd-color-black-0: #000000;
@@ -50,13 +50,13 @@
   --havok-dnd-font-family: 'Cinzel', serif;
 
   --havok-dnd-font-size-0: 12px;
-  --havok-dnd-font-size-1: 16px;
-  --havok-dnd-font-size-2: 20px;
-  --havok-dnd-font-size-3: 24px;
-  --havok-dnd-font-size-4: 34px;
-  --havok-dnd-font-size-5: 48px;
-  --havok-dnd-font-size-6: 60px;
-  --havok-dnd-font-size-7: 96px;
+  --havok-dnd-font-size-1: 14px;
+  --havok-dnd-font-size-2: 16px;
+  --havok-dnd-font-size-3: 20px;
+  --havok-dnd-font-size-4: 24px;
+  --havok-dnd-font-size-5: 34px;
+  --havok-dnd-font-size-6: 48px;
+  --havok-dnd-font-size-7: 60px;
 
   --havok-dnd-font-weight-1: 400;
   --havok-dnd-font-weight-2: 700;
@@ -69,6 +69,7 @@
   --havok-dnd-spacing-1: 8px;
   --havok-dnd-spacing-2: 16px;
   --havok-dnd-spacing-3: 24px;
+  --havok-dnd-spacing-4: 32px;
 
   --havok-dnd-transition-1: 0.3s;
 }
@@ -197,6 +198,7 @@ td {
 
 th {
   padding: var(--havok-dnd-spacing-2) 0;
+  text-transform: uppercase;
 }
 
 ul {
@@ -205,10 +207,25 @@ ul {
   margin-left: 20px;
 }
 
+.havok-dnd-blockquote {
+  background-color: var(--havok-dnd-color-black-0);
+  border-left: solid 1px var(--havok-dnd-color-gold-8);
+  border-right: solid 1px var(--havok-dnd-color-gold-8);
+  margin: var(--havok-dnd-spacing-2) 0;
+  padding: var(--havok-dnd-spacing-3);
+}
+
+.havok-dnd-blockquote-citation {
+  color: var(--havok-dnd-color-gold-6);
+  margin: var(--havok-dnd-spacing-3) 0 0;
+  text-align: right;
+}
+
 .havok-dnd-button {
   background-color: var(--havok-dnd-color-black-2);
   display: inline-block;
-  padding: var(--havok-dnd-spacing-2);
+  font-size: var(--havok-dnd-font-size-2);
+  padding: var(--havok-dnd-spacing-4);
   text-decoration: none;
 }
 
@@ -237,6 +254,11 @@ ul {
   background: linear-gradient(var(--havok-dnd-color-gold-8), var(--havok-dnd-color-gold-4));
   margin: var(--havok-dnd-spacing-2) 0;
   padding: 3px;
+}
+
+.havok-dnd-card-footer {
+  background-color: var(--havok-dnd-color-black-1);
+  padding: var(--havok-dnd-spacing-3);
 }
 
 .havok-dnd-creature-block {
@@ -313,7 +335,7 @@ ul {
   box-shadow: var(--havok-dnd-shadow-base);
   box-sizing: border-box;
   display: flex;
-  height: 75px;
+  height: 60px;
   justify-content: space-between;
   left: 0;
   padding: 0 20px;
@@ -325,11 +347,12 @@ ul {
 
 .havok-dnd-navbar a {
   text-shadow: 0 0 10px var(--havok-dnd-color-black-0);
+  text-transform: uppercase;
 }
 
 .havok-dnd-navbar h1 {
   color: var(--havok-dnd-color-gold-6);
-  font-size: var(--havok-dnd-font-size-3);
+  font-size: var(--havok-dnd-font-size-2);
   font-weight: var(--havok-dnd-font-weight-1);
   margin: 0;
 }
