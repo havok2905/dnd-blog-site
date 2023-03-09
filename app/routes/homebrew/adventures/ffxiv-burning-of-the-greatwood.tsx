@@ -520,29 +520,31 @@ export default () => {
               ]
             }
           ]}
-          
-          spellcastingAbility="Intelligence"
-          spellcastingBonus={5}
-          spellcastingLevel={3}
-          spellcastingSaveDc={13}
-          cantrips={[
-            'Create Bonfire',
-            'Light',
-            'Spare the Dying'
-          ]}
-          firstLevel={[
-            'Chromatic Orb',
-            'Comprehend Language',
-            'Detect Magic',
-            'Faerie Fire',
-            'Hex',
-            'Identify',
-            'Magic Missile'
-          ]}
-          secondLevel={[
-            'Detect Thoughts',
-            'Hold Person'
-          ]}
+
+          spellbook={{
+            spellcastingAbility: 'Intelligence',
+            spellcastingBonus: 5,
+            spellcastingLevel: 3,
+            spellcastingSaveDc: 13,
+            cantrips: [
+              'Create Bonfire',
+              'Light',
+              'Spare the Dying'
+            ],
+            firstLevel: [
+              'Chromatic Orb',
+              'Comprehend Language',
+              'Detect Magic',
+              'Faerie Fire',
+              'Hex',
+              'Identify',
+              'Magic Missile'
+            ],
+            secondLevel: [
+              'Detect Thoughts',
+              'Hold Person'
+            ]
+          }}
         />
         <CreatureBlock
           name="Emerald Carbuncle"
@@ -745,44 +747,46 @@ export default () => {
             }
           ]}
 
-          spellcastingAbility="Intelligence"
-          spellcastingBonus={7}
-          spellcastingLevel={11}
-          spellcastingSaveDc={15}
-          cantrips={[
-            'Blade Ward',
-            'Firebolt',
-            'Mage Hand',
-            'Produce Flame',
-            'Thaumaturgy'
-          ]}
-          firstLevel={[
-            'Chromatic Orb',
-            'Find Familiar',
-            'Detect Magic',
-            'Shield'
-          ]}
-          secondLevel={[
-            'Hold Person',
-            'Misty Step',
-            'Aganazzar\'s Scorcher'
-          ]}
-          thirdLevel={[
-            'Call Lightning',
-            'Dispel Magic',
-            'Fireball'
-          ]}
-          fourthLevel={[
-            'Polymorph',
-            'Wall of Fire'
-          ]}
-          fifthLevel={[
-            'Flame Strike',
-            'Wall of Force'
-          ]}
-          sixthLevel={[
-            'Investiture of Flame '
-          ]}
+          spellbook={{
+            spellcastingAbility: 'Intelligence',
+            spellcastingBonus: 7,
+            spellcastingLevel: 11,
+            spellcastingSaveDc: 15,
+            cantrips: [
+              'Blade Ward',
+              'Firebolt',
+              'Mage Hand',
+              'Produce Flame',
+              'Thaumaturgy'
+            ],
+            firstLevel: [
+              'Chromatic Orb',
+              'Find Familiar',
+              'Detect Magic',
+              'Shield'
+            ],
+            secondLevel: [
+              'Hold Person',
+              'Misty Step',
+              'Aganazzar\'s Scorcher'
+            ],
+            thirdLevel: [
+              'Call Lightning',
+              'Dispel Magic',
+              'Fireball'
+            ],
+            fourthLevel: [
+              'Polymorph',
+              'Wall of Fire'
+            ],
+            fifthLevel: [
+              'Flame Strike',
+              'Wall of Force'
+            ],
+            sixthLevel: [
+              'Investiture of Flame '
+            ]
+          }}
         />
       </Page>
     </>

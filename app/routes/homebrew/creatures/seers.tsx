@@ -220,57 +220,59 @@ export default () => {
             }
           ]}
 
-          spellcastingAbility="Intelligence"
-          spellcastingBonus={12}
-          spellcastingLevel={18}
-          spellcastingSaveDc={20}
-          cantrips={[
-            'Mage Hand',
-            'Mending',
-            'Mind Sliver'
-          ]}
-          firstLevel={[
-            'Charm Person',
-            'Magic Missile',
-            'Shield',
-            'Thunderwave'
-          ]}
-          secondLevel={[
-            'Crown of Madness',
-            'Detect Thoughts',
-            'Hold Person',
-            'Invisibility',
-            'Mirror Image'
-          ]}
-          thirdLevel={[
-            'Blink',
-            'Counterspell',
-            'Dispel Magic',
-            'Fireball'
-          ]}
-          fourthLevel={[
-            'Blight',
-            'Hallucinatory Terrain',
-            'Polymorph'
-          ]}
-          fifthLevel={[
-            'Conjure Elemental',
-            'Scrying'
-          ]}
-          sixthLevel={[
-            'Disintegrate',
-            'Globe of Invulnerability'
-          ]}
-          seventhLevel={[
-            'Finger of Death',
-            'Reverse Gravity'
-          ]}
-          eighthLevel={[
-            'Maze'
-          ]}
-          ninthLevel={[
-            'Time Stop'
-          ]}
+          spellbook={{
+            spellcastingAbility: 'Intelligence',
+            spellcastingBonus: 12,
+            spellcastingLevel: 18,
+            spellcastingSaveDc: 20,
+            cantrips: [
+              'Mage Hand',
+              'Mending',
+              'Mind Sliver'
+            ],
+            firstLevel: [
+              'Charm Person',
+              'Magic Missile',
+              'Shield',
+              'Thunderwave'
+            ],
+            secondLevel: [
+              'Crown of Madness',
+              'Detect Thoughts',
+              'Hold Person',
+              'Invisibility',
+              'Mirror Image'
+            ],
+            thirdLevel: [
+              'Blink',
+              'Counterspell',
+              'Dispel Magic',
+              'Fireball'
+            ],
+            fourthLevel: [
+              'Blight',
+              'Hallucinatory Terrain',
+              'Polymorph'
+            ],
+            fifthLevel: [
+              'Conjure Elemental',
+              'Scrying'
+            ],
+            sixthLevel: [
+              'Disintegrate',
+              'Globe of Invulnerability'
+            ],
+            seventhLevel: [
+              'Finger of Death',
+              'Reverse Gravity'
+            ],
+            eighthLevel: [
+              'Maze'
+            ],
+            ninthLevel: [
+              'Time Stop'
+            ]
+          }}
         />
         <CreatureBlock
           name="Seer Larva"
@@ -367,47 +369,45 @@ export default () => {
           legendaryActionsText=""
           legendaryActions={[]}
 
-          spellcastingAbility="Intelligence"
-          spellcastingBonus={8}
-          spellcastingLevel={9}
-          spellcastingSaveDc={16}
-          cantrips={[
-            'Mage Hand',
-            'Mending',
-            'Mind Sliver'
-          ]}
-          firstLevel={[
-            'Charm Person',
-            'Magic Missile',
-            'Shield',
-            'Thunderwave'
-          ]}
-          secondLevel={[
-            'Crown of Madness',
-            'Detect Thoughts',
-            'Hold Person',
-            'Invisibility',
-            'Mirror Image'
-          ]}
-          thirdLevel={[
-            'Blink',
-            'Counterspell',
-            'Dispel Magic',
-            'Fireball'
-          ]}
-          fourthLevel={[
-            'Blight',
-            'Hallucinatory Terrain',
-            'Polymorph'
-          ]}
-          fifthLevel={[
-            'Conjure Elemental',
-            'Scrying'
-          ]}
-          sixthLevel={[]}
-          seventhLevel={[]}
-          eighthLevel={[]}
-          ninthLevel={[]}
+          spellbook={{
+            spellcastingAbility: 'Intelligence',
+            spellcastingBonus: 8,
+            spellcastingLevel: 9,
+            spellcastingSaveDc: 16,
+            cantrips: [
+              'Mage Hand',
+              'Mending',
+              'Mind Sliver'
+            ],
+            firstLevel: [
+              'Charm Person',
+              'Magic Missile',
+              'Shield',
+              'Thunderwave'
+            ],
+            secondLevel: [
+              'Crown of Madness',
+              'Detect Thoughts',
+              'Hold Person',
+              'Invisibility',
+              'Mirror Image'
+            ],
+            thirdLevel: [
+              'Blink',
+              'Counterspell',
+              'Dispel Magic',
+              'Fireball'
+            ],
+            fourthLevel: [
+              'Blight',
+              'Hallucinatory Terrain',
+              'Polymorph'
+            ],
+            fifthLevel: [
+              'Conjure Elemental',
+              'Scrying'
+            ]
+          }}
         />
       </Page>
     </>

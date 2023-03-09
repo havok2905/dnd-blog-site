@@ -20,10 +20,12 @@ export const Button = ({
   );
 
   return (
-    <button
-      className="havok-dnd-button-border"
-      type="button">
-      {text}
-    </button>
+    <div className="havok-dnd-button-border">
+      <button
+        className="havok-dnd-button"
+        type="button">
+        {text}
+      </button>
+    </div>
   );
 };
