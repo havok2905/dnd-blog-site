@@ -13,7 +13,7 @@ export const meta = {
     meta: {
       path: 'simon-evans',
       title: "Simon Evans",
-      description: 'Lorem ipsum'
+      description: 'Halfling - Artificer, Battle Smith (5); Wizard, War Magic (6)'
     }
   }
 };
