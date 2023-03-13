@@ -364,6 +364,14 @@ ul {
   margin: 0;
 }
 
+.havok-dnd-navbar-links {
+  display: flex;
+}
+
+.havok-dnd-navbar-links a {
+  margin-right: var(--havok-dnd-spacing-2);
+}
+
 .havok-dnd-navbar-logo {
   align-items: center;
   display: flex;

@@ -1,15 +1,30 @@
-import logo from '~/images/logo.png';
+interface INavbarLink {
+  href: string;
+  text: string;
+}
 
-export const Navbar = () => {
+interface INavbarProps {
+  homeLink: INavbarLink;
+  links: INavbarLink[];
+  logoAlt: string;
+  logoSrc: string;
+}
+
+export const Navbar = ({
+  homeLink,
+  links,
+  logoAlt,
+  logoSrc
+}: INavbarProps) => {
   return (
     <nav className="havok-dnd-navbar">
-      <a href="/" className="havok-dnd-navbar-logo">
-        <img alt="logo" src={logo}/>
-        <h1>Havok's Corner</h1>
+      <a href={homeLink.href} className="havok-dnd-navbar-logo">
+        <img alt={logoAlt} src={logoSrc}/>
+        <h1>{homeLink.text}</h1>
       </a>
-      <a href="/">
-        Home
-      </a>
+      <div className="havok-dnd-navbar-links">
+        {links.map(link => <a href={link.href}>{link.text}</a>)}
+      </div>
     </nav>
   );
 };
