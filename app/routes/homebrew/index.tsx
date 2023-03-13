@@ -1,7 +1,7 @@
-import {Link} from '@remix-run/react';
-
-import {Card} from '~/design-system/components/Card';
 import {Quote} from '~/design-system/components/Quote';
+
+import {Layout} from '~/components/Layout';
+import {PostCard} from '~/components/PostCard';
 
 import {meta as seers} from "./creatures/seers";
 
@@ -16,62 +16,28 @@ import {meta as theWorldOfRunoa} from './world/the-world-of-runoa';
 import {meta as sessionZeroLongForm} from './resources/session-zero-long-form';
 import {meta as sessionZeroShortForm} from './resources/session-zero-short-form';
 
-import {Layout} from '~/components/Layout';
-
-interface IPost {
-  attributes: {
-    meta: {
-      description: string;
-      path: string;
-      title: string;
-    }
-  }
-}
-
 const charactersRoute = () => {
-  const getPost = (post: IPost) => {
-    const {
-      description = '',
-      path = '',
-      title = ''
-    } = post?.attributes?.meta;
-
-    return (
-      <Card
-        footer={(
-          <Link to={path}>
-            View
-          </Link>
-        )}
-        title={title}>
-        <p>
-          {description}
-        </p>
-      </Card>
-    );
-  };
-
   return (
     <Layout>
       <h2>D&D Homebrew</h2>
       <h3>Resources</h3>
-      {getPost(sessionZeroLongForm)}
-      {getPost(sessionZeroShortForm)}
+      <PostCard post={sessionZeroLongForm}/>
+      <PostCard post={sessionZeroShortForm}/>
       <h3>World</h3>
-      {getPost(theWorldOfRunoa)}
+      <PostCard post={theWorldOfRunoa}/>
       <h3>Races</h3>
-      {getPost(duineSpirits)}
-      {getPost(dwarves)}
-      {getPost(halflings)}
-      {getPost(theVidi)}
-      {getPost(serpentes)}
+      <PostCard post={duineSpirits}/>
+      <PostCard post={dwarves}/>
+      <PostCard post={halflings}/>
+      <PostCard post={theVidi}/>
+      <PostCard post={serpentes}/>
       <h3>Creatures</h3>
       <Quote>
         <p>
           !!!SPOILER TERRITORY AHEAD!!!
         </p>
       </Quote>
-      {getPost(seers)}
+      <PostCard post={seers}/>
     </Layout>
   );
 };
