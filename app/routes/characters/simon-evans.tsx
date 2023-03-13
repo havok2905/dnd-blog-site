@@ -47,16 +47,17 @@ export default () => {
         ]}
         background="Vault Dweller"
         backstory={[
-          'Simon grew up never knowing his parents, Mirabella and Rory Evans. They perished in an accident just after his birth, experimenting with new arcane methods to power various parts of the archive. Since then, his Uncle had been raising him and acting as his mentor at their family repair shop.',
-          'Simon worked with his Uncle as an apprentice, running odd jobs for the town. In secret, he poured over books about history, the arcane, and the outside world. He also secretly worked on small gadgets and constructs to keep him company in his workshop. All of this he did against the wishes of his Uncle, who only wished for Simon to live a normal and accident free life.',
-          'Simon attended high school at the archive, where he got his first taste of magic, taking Cantrips 101 with his friend Willow.',
-          'Since leaving the archive, Simon expanded on his knowledge of the arcane, weaving it with his aptitude for engineering, invention, and tactics.'
+          'Simon Evans grew up an orphan, raised in an underground vault known as The Archive. His parents, Rory and Mirabella Evans, both perished in an arcane explosion, caused from their involvement in experiments to better power their underground home. Since then, his guardian, Uncle Rufus Drogo, had attempted to raise Simon as a mechanic and a life steered far from the dangerous path his parents walked.',
+          'As a young teenager, Simon would come to work under his Uncle as an apprentice, while he wasn\'t attending school during the day. In secrecy of his hidden workshop, however, Simon poured over books of mage craft, artifice, and history of the aboveground. It was here that he began construction of his first metal familiar, a mechanical bull by the name of Pie, as well as rudimentary firearms for target practice and sport.',
+          'A series of earthquakes that coursed through their home jettisoned Simon into an unconventional group of companions, all united to find the source of the quakes. Their adventures would eventually bring them to the surface. It was here where the group would discover that their long held understanding, that the aboveground was a lifeless wasteland, was a lie.',
+          'Since this discovery, Simon and his group would become representatives of the Archive, traveling far across the continent to forge new alliances with the greater world. These new experiences broadened Simon\'s sense of self. Now apart from his Uncle, he would discover his potential as not just a skilled mechanic, but also a powerful mage, a shrewd commander, and after much trial and error, a dependable young man.',
+          'Simon travels with three summoned familiars; Pie the mechanical bull, Buttons the spectral dragon, and Commander Evelynn Snowball the fey spirt. Simon\'s constructs and familiars are all souls of the deceased, pulled from the aether by Simon in times of deep emotional attunement, and each fulfilling a different need. Previously unbeknownst to Simon, he does not cast the spell Find Familiar properly, but instead taps into an innate sorcery that he alone commands. Now knowing this, he has begun to experiment with channeling his familiar\'s souls into much more powerful states of being and summoning them on command.',
+          'Pie was Simon\'s first familiar. He was summoned from Simon\'s drive to protect others and the need for protection himself. As such, he is a loyal, unwavering, companion that will throw himself in front of any danger without question.',
+          'Buttons was summoned at Simon\'s lowest point, driven from Simon\'s need for joy. He is now summoned from Simon\'s drive to spread joy to others. As such, he is a friendly spirit who knows only three things; Play, heal, and combat ( just high stakes play ).',
+          'Commander Evelynn Snowball was summoned from Simon\'s first “successful” use of Find Familiar and at a time when he was lost for guidance and direction. She takes many forms, though tends to appear as either a white stoat or snowy owl. In her past life, Snowball was an accomplished commander of armies within the Winter Court. Ever proud, she does not appreciate such a low-born child summoning her. But, she will train him nonetheless, seeing potential in the young boy.'
         ]}
         bonds={[
           'My Uncle wants me to be something I\'m not, wishing that I would avoid the study of magic in favor of working in his repair shop. He fears I will blow myself up, like my parents did.',
-          'Pie was was first familiar, a mechanical bull. He is my most loyal and silent companion',
-          'Buttons was my second familiar, a spectral dragon. He brings joy to all around him.',
-          'Snowball was my last familiar, a white stoat. She is a proud and royal fey spirit that is my mentor in tactics and warfare.',
           'My familiars are my closest partners. As my creations, they are my responsibility to keep safe.',
           'Willow is the only friend I have that is my age. She drives me up a wall, but I would die for her.',
           'Tselana was a big sister to me. When I was struggling to figure myself out, she encouraged me to follow my own path and not chase after others. I begrudgingly accept the existence of her undead servants.'
@@ -77,6 +78,7 @@ export default () => {
         con={13}
         dex={16}
         equipment={[
+          'Arcane Grimoire +2',
           'Bolt Gun',
           'Bone Pipe: 2',
           'Carpenter\'s Tools',
@@ -379,8 +381,8 @@ export default () => {
         spellbook={{
           spellcastingAbility: 'Intelligence',
           spellcastingLevel: 9,
-          spellcastingBonus: 9,
-          spellcastingSaveDc: 17,
+          spellcastingBonus: 11,
+          spellcastingSaveDc: 19,
           cantrips: [
             'Dancing Lights',
             'Frostbite',
