@@ -1,4 +1,4 @@
-import {IAbility} from '../types/types'
+import {IAbilityType} from '../types/types'
 
 interface StatBlockProps {
   cha: number,
@@ -6,7 +6,7 @@ interface StatBlockProps {
   dex: number,
   int: number,
   proficiencyBonus: number,
-  saves?: IAbility[],
+  saves?: IAbilityType[],
   str: number,
   wis: number
 }
@@ -27,7 +27,7 @@ export const StatBlock = ({
     return adjusted < 0 ? adjusted.toString() : `+${adjusted}`;
   };
 
-  const getIsProficient = (ability: IAbility): boolean => {
+  const getIsProficient = (ability: IAbilityType): boolean => {
     if (!saves) return false;
     return saves.includes(ability);
   };

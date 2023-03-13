@@ -1,10 +1,36 @@
-export type IAbility =
+export type IProficiencyType =
+  'Proficient' |
+  'Expertise' |
+  '' |
+  undefined;
+
+export type IAbilityType =
   'Strength' |
   'Dexterity' |
   'Constitution' |
   'Intelligence' |
   'Wisdom' |
   'Charisma';
+
+export type ISkillType =
+  'Acrobatics' |
+  'Animal Handling' |
+  'Arcana' |
+  'Athletics' |
+  'Deception' |
+  'History' |
+  'Insight' |
+  'Intimidation' |
+  'Investigation' |
+  'Medicine' |
+  'Nature' |
+  'Perception' |
+  'Performance' |
+  'Persuasion' |
+  'Religion' |
+  'Sleight of Hand' |
+  'Stealth' |
+  'Survival';
 
 export type IAlignment =
   'Lawful Good' |
@@ -18,6 +44,14 @@ export type IAlignment =
   'Chaotic Evil' |
   'Unaligned' ;
 
+export type ISourceType = 'Class' | 'Background' | 'Race';
+
+export interface IClass {
+  level: number;
+  name: string;
+  subclass?: string;
+}
+
 export interface IAction {
   name: string;
   text: string[];
@@ -25,12 +59,19 @@ export interface IAction {
 
 export interface IFeature {
   name: string;
+  sourceName?: string;
+  sourceType?: ISourceType;
   text: string[];
 }
 
 export interface ILegendaryAction {
   name: string;
   text: string[];
+}
+
+export interface ISkillProficiency {
+  name: ISkillType;
+  proficiencyType: IProficiencyType;
 }
 
 export type ISize =
@@ -52,7 +93,7 @@ export interface ISpeed {
 }
 
 export interface ISpellbook {
-  spellcastingAbility: IAbility;
+  spellcastingAbility: IAbilityType;
   spellcastingBonus: number;
   spellcastingLevel: number;
   spellcastingSaveDc: number;

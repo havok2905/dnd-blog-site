@@ -7,6 +7,8 @@ import {Quote} from '~/design-system/components/Quote';
 
 import {meta as ffxivBurningOfTheGreatwood} from "./homebrew/adventures/ffxiv-burning-of-the-greatwood";
 
+import {meta as simonEvans} from "./homebrew/characters/simon-evans";
+
 import {meta as seers} from "./homebrew/creatures/seers";
 
 import {meta as duineSpirits} from "./homebrew/races/duine-spirits";
@@ -77,6 +79,8 @@ const indexRoute = () => {
         {getPost(halflings)}
         {getPost(theVidi)}
         {getPost(serpentes)}
+        <h3>Characters</h3>
+        {getPost(simonEvans)}
         <h3>Creatures</h3>
         <Quote>
           <p>

@@ -5,7 +5,7 @@ import {Spellbook} from './Spellbook';
 import {StatBlock} from './StatBlock';
 
 import {
-  IAbility,
+  IAbilityType,
   IAction,
   IAlignment,
   IFeature,
@@ -40,7 +40,7 @@ interface CreatureBlockProps {
   legendaryActionsText?: string;
   name: string;
   proficiencyBonus: number;
-  saves?: IAbility[];
+  saves?: IAbilityType[];
   senses?: string[];
   skills?: ISkill[];
   size: ISize;

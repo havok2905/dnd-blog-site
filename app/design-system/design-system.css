@@ -388,3 +388,12 @@ ul {
 .havok-dnd-page img {
   max-width: 100%;
 }
+
+.havok-dnd-skill-table {
+  max-width: 500px;
+}
+
+.havok-dnd-skill-table td:nth-child(2),
+.havok-dnd-skill-table th:nth-child(2) {
+  text-align: left;
+}
