@@ -34,8 +34,8 @@ export const SkillsTable = ({
 
   const getProficiencyIcon = (skill: ISkillType) => {
     const foundSkill = getSkill(skill);
-    if (foundSkill?.proficiencyType === 'Proficient') return <CheckIcon/>;
-    if (foundSkill?.proficiencyType === 'Expertise') return <DoubleCheckIcon/>;
+    if (foundSkill?.proficiencyType === 'Proficient') return <CheckIcon height="20px" width="20px"/>;
+    if (foundSkill?.proficiencyType === 'Expertise') return <DoubleCheckIcon height="20px" width="20px"/>;
     return foundSkill?.proficiencyType ?? '';
   };
 

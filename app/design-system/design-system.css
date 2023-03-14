@@ -102,37 +102,37 @@ h1 {
   color: var(--havok-dnd-color-white-0);
   font-size: var(--havok-dnd-font-size-7);
   font-weight: var(--havok-dnd-font-weight-2);
-  margin-bottom: calc(var(--havok-dnd-font-size-7) / 2);
+  margin: var(--havok-dnd-font-size-7) 0;
 }
 
 h2 {
   color: var(--havok-dnd-color-white-0);
   font-size: var(--havok-dnd-font-size-6);
-  margin: calc(var(--havok-dnd-font-size-6) / 2) 0;
+  margin: var(--havok-dnd-font-size-6) 0;
 }
 
 h3 {
   color: var(--havok-dnd-color-white-0);
   font-size: var(--havok-dnd-font-size-5);
-  margin: calc(var(--havok-dnd-font-size-5) / 2) 0;
+  margin: var(--havok-dnd-font-size-5) 0;
 }
 
 h4 {
   color: var(--havok-dnd-color-white-0);
   font-size: var(--havok-dnd-font-size-4);
-  margin: calc(var(--havok-dnd-font-size-4) / 2) 0;
+  margin: var(--havok-dnd-font-size-4) 0;
 }
 
 h5 {
   color: var(--havok-dnd-color-white-0);
   font-size: var(--havok-dnd-font-size-3);
-  margin-bottom: var(--havok-dnd-spacing-2);
+  margin: var(--havok-dnd-spacing-2) 0;
 }
 
 h6 {
   color: var(--havok-dnd-color-white-0);
   font-size: var(--havok-dnd-font-size-2);
-  margin-bottom: var(--havok-dnd-spacing-2);
+  margin: var(--havok-dnd-spacing-2) 0;
 }
 
 hr {
@@ -335,6 +335,68 @@ ul {
   width: 100%;
 }
 
+.havok-dnd-map {
+  position: relative;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.havok-dnd-map::-webkit-scrollbar {
+  display: none;
+}
+
+.havok-dnd-map-controls {
+  display: flex;
+  flex-direction: column;
+  left: 1px;
+  position: absolute;
+  top: 1px;
+}
+
+.havok-dnd-map-controls-button {
+  background-color: var(--havok-dnd-color-black-2);
+  border: none;
+  box-sizing: content-box;
+  color: var(--havok-dnd-color-gold-6);
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--havok-dnd-font-family);
+  font-size: var(--havok-dnd-font-size-2);
+  padding: var(--havok-dnd-spacing-1);
+  margin: 0;
+  outline: none;
+  text-decoration: none;
+}
+
+.havok-dnd-map-controls-button:active {
+  background-color: var(--havok-dnd-color-black-3);
+}
+
+.havok-dnd-map-controls-button:focus,
+.havok-dnd-map-controls-button:hover {
+  background-color: var(--havok-dnd-color-black-1);
+}
+
+.havok-dnd-map-content {
+  border: var(--havok-dnd-border-base);
+  height: 500px;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  max-width: 100%;
+
+  /* Hide scrollbar from IE and Edge */
+  -ms-overflow-style: none; 
+
+  /* Hide scrollbar from Firefox */
+  scrollbar-width: none;
+}
+
+.havok-dnd-map .havok-dnd-map-content img {
+  max-width: initial;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
 .havok-dnd-navbar {
   align-items: center;
   background: linear-gradient(var(--havok-dnd-color-black-3), var(--havok-dnd-color-black-1));
@@ -345,7 +407,7 @@ ul {
   height: 60px;
   justify-content: space-between;
   left: 0;
-  padding: 0 20px;
+  padding: 0 var(--havok-dnd-spacing-2);
   position: fixed;
   top: 0;
   width: 100%;
@@ -364,12 +426,38 @@ ul {
   margin: 0;
 }
 
-.havok-dnd-navbar-links {
+.havok-dnd-navbar-links-desktop {
   display: flex;
 }
 
-.havok-dnd-navbar-links a {
+.havok-dnd-navbar-links-desktop a {
   margin-right: var(--havok-dnd-spacing-2);
+}
+
+.havok-dnd-navbar-links-mobile {
+  box-sizing: border-box;
+  display: none;
+  flex-direction: column;
+  left: calc(-1 * var(--havok-dnd-spacing-2));
+  padding: 0 var(--havok-dnd-spacing-2);
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  z-index: 1000;
+}
+
+.havok-dnd-navbar-links-mobile a {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: var(--havok-dnd-spacing-2);
+  width: 100%;
+}
+
+.havok-dnd-navbar-links-mobile-toggle {
+  border: none;
+  background: none;
+  color: var(--havok-dnd-color-gold-6);
+  cursor: pointer;
+  display: none;
 }
 
 .havok-dnd-navbar-logo {
@@ -404,4 +492,26 @@ ul {
 .havok-dnd-skill-table td:nth-child(2),
 .havok-dnd-skill-table th:nth-child(2) {
   text-align: left;
+}
+
+@media screen and (max-width: 700px) {
+  .havok-dnd-entity-header {
+    flex-direction: column;
+  }
+
+  .havok-dnd-entity-header img {
+    margin-bottom: var(--havok-dnd-spacing-2);
+  }
+
+  .havok-dnd-navbar-links-desktop {
+    display: none;
+  }
+
+  .havok-dnd-navbar-links-mobile {
+    display: flex;
+  }
+
+  .havok-dnd-navbar-links-mobile-toggle {
+    display: block;
+  }
 }

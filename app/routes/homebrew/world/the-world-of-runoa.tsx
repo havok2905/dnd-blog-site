@@ -1,5 +1,5 @@
 import {Card} from '~/design-system/components/Card';
-import {ImageWithCaption} from '~/design-system/components/ImageWithCaption';
+import {Map} from '~/design-system/components/Map';
 import {Quote} from '~/design-system/components/Quote';
 
 import {Layout} from '~/components/Layout';
@@ -20,9 +20,14 @@ export default () => {
   return (
     <Layout>
       <h2>The World of Runoa</h2>
-      <ImageWithCaption
+      <Map
         imageAlt="World Map"
-        imageSrc={worldMap}/>
+        imageSrc={worldMap}
+        zoomInitial={100}
+        zoomIncrement={20}
+        zoomMaxThreshold={200}
+        zoomMinThreshold={100}
+      />
       <Quote>
         <p>
           Metal ships billow steam towards the clouds overhead, slicing though the icy waters just outside the stonework metropolis of Fey. A young scholar pours over a scroll by the light of the setting sun, just about to dip below the sprawling sand dunes of the Habash Desert. A group of teenage boys race between a labyrinth of neon lit steel pipes, pistols drawn and at the ready. A man in a tailored suit gazes out from his tower at the warm coastal waters of the Celu gulf and, somewhere in the darkness, a clawed hand reaches out towards a glimmering blue orb of light.
